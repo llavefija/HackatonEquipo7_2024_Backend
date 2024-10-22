@@ -54,5 +54,15 @@ public class Controller {
         return new ResponseEntity<>(data, HttpStatus.OK);
     }
 
+    @GetMapping("/ubicationsAllInfo/dbcolorsByUbication/{fecha}/{idUbicacion}")
+    public ResponseEntity<List<Map<String, Object>>> getCombinedDataByUbication(
+            @PathVariable("fecha") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fecha,
+            @PathVariable("idUbicacion") Long idUbicacion) {
+
+        List<Map<String, Object>> data = ubicationNoiseService.listarUbiYColorsByUbication(fecha, idUbicacion);
+        return new ResponseEntity<>(data, HttpStatus.OK);
+    }
+
+
 
 }
