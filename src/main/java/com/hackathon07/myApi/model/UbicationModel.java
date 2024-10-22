@@ -31,4 +31,17 @@ public class UbicationModel {
     @OneToMany(mappedBy = "ubication")
     List<NoiseDataModel> noiseData;
 
+    @Override
+    public boolean equals(Object o){
+        if (o instanceof UbicationModel) return this.name.equalsIgnoreCase(((UbicationModel) o).getName());
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return name.toLowerCase().hashCode();
+    }
+
+
+
 }
