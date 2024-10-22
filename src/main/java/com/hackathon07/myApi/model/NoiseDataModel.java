@@ -12,6 +12,54 @@ import java.util.Date;
 @Table(name = "noise-data")
 public class NoiseDataModel {
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public void setHour(int hour) {
+        this.hour = hour;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public double getdBs() {
+        return dBs;
+    }
+
+    public void setdBs(double dBs) {
+        this.dBs = dBs;
+    }
+
+    public int getNoiseLevel() {
+        return noiseLevel;
+    }
+
+    public void setNoiseLevel(int noiseLevel) {
+        this.noiseLevel = noiseLevel;
+    }
+
+    public UbicationModel getUbication() {
+        return ubication;
+    }
+
+    public void setUbication(UbicationModel ubication) {
+        this.ubication = ubication;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
