@@ -36,6 +36,7 @@ public class Controller {
         return ResponseEntity.ok().body(ubicationService.addUbication(ubication));
     }
 
+
     @PostMapping("/noise")
     private ResponseEntity<NoiseDataModel> addNoises(@RequestBody NoiseDataModel noise) {
         return ResponseEntity.ok().body(noiseDataService.addNoise(noise));
