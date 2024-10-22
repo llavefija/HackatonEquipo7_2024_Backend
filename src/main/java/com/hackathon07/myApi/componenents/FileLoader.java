@@ -105,6 +105,11 @@ public class FileLoader implements CommandLineRunner {
                 noiseDataEntry.setUbication(ubication);
                 noiseData.add(noiseDataEntry);
 
+                if (noiseData.size() > 500){
+                    noiseDataRepo.saveAll(noiseData);
+                    noiseData.clear();
+                }
+
             }
             noiseDataRepo.saveAll(noiseData);
         } catch (CsvValidationException e) {
