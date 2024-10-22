@@ -5,7 +5,7 @@ Este proyecto es una **API** desarrollada para una aplicación que proporciona a
 
 ## Requisitos Previos
 - **Java 17** o superior.
-- Base de datos **MySQL** con una base de datos llamada `hackaton07`. (Esto puede ser modificado en el archivo `application.properties` del proyecto).
+- Base de datos **MySQL**, ejecutar el script 'createDb.sql' para crear una base de datos llamada `hackaton07`. (Esto puede ser modificado en el archivo `application.properties` del proyecto).
 - Usuario con permisos **root** y contraseña `M@s7erKey`. (También se puede cambiar en `application.properties`).
 
 ## Instalación y Ejecución del Proyecto
