@@ -3,7 +3,7 @@ name: Deploy Spring Boot App
 on:
   push:
     branches:
-      - main  # Cambia esto si tu rama principal es diferente
+      - develop  # Cambia esto si tu rama principal es diferente
 
 jobs:
   build:
