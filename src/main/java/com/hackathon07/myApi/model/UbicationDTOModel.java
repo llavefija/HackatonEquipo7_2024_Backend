@@ -1,30 +1,31 @@
 package com.hackathon07.myApi.model;
 
-    // PARAMETROS
-    public class UbicationDTOModel {
-        private Double latitude;
-        private Double longitude;
-        private String name;
+// Clase que representa un modelo de datos para ubicaciones (DTO - Data Transfer Object)
+public class UbicationDTOModel {
 
-        // CONSTRUCTOR
-        public UbicationDTOModel(Double latitude, Double longitude, String name) {
-            this.latitude = latitude;
-            this.longitude = longitude;
-            this.name = name;
-        }
+    // PARÁMETROS
+    private Double latitude; // Latitud de la ubicación
+    private Double longitude; // Longitud de la ubicación
+    private String name; // Nombre de la ubicación
 
-        // GETTERS
-        public Double getLatitude() {
-            return latitude;
-        }
-
-        public Double getLongitude() {
-            return longitude;
-        }
-
-        public String getName() {
-            return name;
-        }
+    // CONSTRUCTOR
+    public UbicationDTOModel(Double latitude, Double longitude, String name) {
+        // Inicializa los parámetros de la ubicación
+        this.latitude = latitude; // Establece la latitud
+        this.longitude = longitude; // Establece la longitud
+        this.name = name; // Establece el nombre
     }
 
+    // GETTERS
+    public Double getLatitude() {
+        return latitude; // Devuelve la latitud de la ubicación
+    }
 
+    public Double getLongitude() {
+        return longitude; // Devuelve la longitud de la ubicación
+    }
+
+    public String getName() {
+        return name; // Devuelve el nombre de la ubicación
+    }
+}

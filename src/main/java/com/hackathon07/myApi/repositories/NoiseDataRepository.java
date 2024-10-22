@@ -1,18 +1,19 @@
 package com.hackathon07.myApi.repositories;
 
-import com.hackathon07.myApi.model.NoiseDataModel;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import com.hackathon07.myApi.model.NoiseDataModel; // Importa el modelo de datos de ruido
+import org.springframework.data.jpa.repository.JpaRepository; // Importa la interfaz JpaRepository para acceso a datos
+import org.springframework.stereotype.Repository; // Importa la anotación Repository
 
-import java.util.Date;
-import java.util.List;
+import java.util.Date; // Importa la clase Date para manejar fechas
+import java.util.List; // Importa la clase List para manejar listas de resultados
 
-
+// Indica que esta interfaz es un repositorio de datos
 @Repository
 public interface NoiseDataRepository extends JpaRepository<NoiseDataModel, Long> {
 
-    // Metodo para buscar por fecha y hora ubicaciones y sonidos
+    // Método para buscar registros de ruido por fecha y hora
     List<NoiseDataModel> findByDateAndHour(Date date, int hour);
-    List<NoiseDataModel> findByDateAndUbicationId(Date fecha, Long idUbicacion);
 
+    // Método para buscar registros de ruido por fecha y el ID de la ubicación
+    List<NoiseDataModel> findByDateAndUbicationId(Date fecha, Long idUbicacion);
 }
