@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.File;
-
 @RestController
 public class Controller {
 
@@ -25,10 +23,6 @@ public class Controller {
         return ResponseEntity.ok().body(ubicationService.addUbication(ubication));
     }
 
-    @PostMapping("/import")
-    private ResponseEntity<String> import(@RequestBody ){
-
-    }
 
 
 }
