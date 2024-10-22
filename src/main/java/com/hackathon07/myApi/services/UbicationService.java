@@ -31,9 +31,9 @@ public class UbicationService {
         // Recorrer las ubicaciones y agregar solo los campos deseados
         for (UbicationModel ubicacion : ubicaciones) {
             UbicationDTOModel dto = new UbicationDTOModel(
-                    ubicacion.getLatitude(),  // Aquí se asume que tienes un método getLatitude()
-                    ubicacion.getLongitude(), // Aquí se asume que tienes un método getLongitude()
-                    ubicacion.getName()       // Aquí se asume que tienes un método getName()
+                    ubicacion.getLatitude(),
+                    ubicacion.getLongitude(),
+                    ubicacion.getName()
             );
             filteredUbications.add(dto);
         }
@@ -42,6 +42,10 @@ public class UbicationService {
     }
 
     public ArrayList<UbicationModel> listarAllInfoUbi() {
+        return (ArrayList<UbicationModel>) ubicationRepo.findAll();
+    }
+
+    public ArrayList<UbicationModel> listarUbiColors() {
         return (ArrayList<UbicationModel>) ubicationRepo.findAll();
     }
 }
