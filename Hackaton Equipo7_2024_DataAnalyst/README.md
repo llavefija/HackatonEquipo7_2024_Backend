@@ -19,5 +19,10 @@ No existe punto API para dicho dataset.
 ### Transformación de Datos
 1. Para evaluar el augmento de ruido e inferir de ello la afluéncia de gente, usamos Power Bi para crear una columna con categorias ponderadas por cada
    punto de medición, en base a sus mínimas y máximas mediciones.
-2. Simplificamos el dataframe para obtener un .csv ligero con la mínima información necesària para pasarla a BackEnd.
+
+
+   ![image](https://github.com/user-attachments/assets/e851c019-2d8e-465c-81eb-5b755fb9ff7c)
+   
+
+3. Simplificamos el dataframe para obtener un .csv ligero con la mínima información necesària para pasarla a BackEnd.
 
