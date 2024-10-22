@@ -15,12 +15,7 @@ public class UbicationService {
     @Autowired
     private UbicationRepository ubicationRepo;
 
-
-    public UbicationModel addUbication(UbicationModel ubication) {
-        return ubicationRepo.save(ubication);
-    }
-
-
+    // Lista todas las ubicaciones (Solo el nombre y las cordenadas)
     public List<UbicationDTOModel> listarUbiName() {
         // Obtener todas las ubicaciones desde el repositorio
         List<UbicationModel> ubicaciones = (List<UbicationModel>) ubicationRepo.findAll();
@@ -41,10 +36,12 @@ public class UbicationService {
         return filteredUbications; // Retornar la lista de DTOs
     }
 
+    // Lista todas las ubicaciones con toda la informacion
     public ArrayList<UbicationModel> listarAllInfoUbi() {
         return (ArrayList<UbicationModel>) ubicationRepo.findAll();
     }
 
+    //
     public ArrayList<UbicationModel> listarUbiColors() {
         return (ArrayList<UbicationModel>) ubicationRepo.findAll();
     }
