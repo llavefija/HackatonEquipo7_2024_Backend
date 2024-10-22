@@ -9,7 +9,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "noise-data")
+@Table(name = "noise_data")
 public class NoiseDataModel {
 
     public long getId() {
@@ -36,11 +36,11 @@ public class NoiseDataModel {
         this.date = date;
     }
 
-    public double getdBs() {
+    public double getDBs() {
         return dBs;
     }
 
-    public void setdBs(double dBs) {
+    public void setDBs(double dBs) {
         this.dBs = dBs;
     }
 

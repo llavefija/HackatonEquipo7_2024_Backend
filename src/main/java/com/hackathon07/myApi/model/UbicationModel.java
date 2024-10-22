@@ -22,6 +22,7 @@ public class UbicationModel {
 
     private double latitude;
 
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     private String image;

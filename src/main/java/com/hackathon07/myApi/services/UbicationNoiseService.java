@@ -37,7 +37,7 @@ public class UbicationNoiseService {
             // Rellenar properties con los campos de ambas tablas
             properties.put("id", ubication.getId());
             properties.put("name", ubication.getName());
-            properties.put("db", noise.getdBs());
+            properties.put("db", noise.getDBs());
             properties.put("dbColor", noise.getNoiseLevel());
 
             // Rellenar geometry con latitud y longitud
