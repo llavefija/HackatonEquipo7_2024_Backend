@@ -24,11 +24,16 @@ jobs:
       - name: Build with Maven
         run: mvn clean package -DskipTests
 
-      # Paso 4: Construir la imagen Docker
-      - name: Build Docker image
-        run: |
-          docker build -t your-docker-image-name .  # Reemplaza con el nombre de tu imagen
-
+      # Paso 4: Construir y publicar la imagen Docker
+      - name: Build and Push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false  # Cambia a true si deseas subir la imagen
+          tags: your-docker-image-name
+          distribution: your-distribution-value  # Proporciona aquí el valor requerido
+          
       # Paso 5: Ejecutar el contenedor Docker
       - name: Run Docker container
         run: |
