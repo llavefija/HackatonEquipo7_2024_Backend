@@ -13,4 +13,6 @@ public interface NoiseDataRepository extends JpaRepository<NoiseDataModel, Long>
 
     // Metodo para buscar por fecha y hora ubicaciones y sonidos
     List<NoiseDataModel> findByDateAndHour(Date date, int hour);
+    List<NoiseDataModel> findByDateAndUbicationId(Date fecha, Long idUbicacion);
+
 }
