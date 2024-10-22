@@ -11,12 +11,9 @@ import java.util.ArrayList;
 @Service
 public class NoiseDataService {
 
+
     @Autowired
     private NoiseDataRepository noiseRepo;
-
-    public NoiseDataModel addNoise(NoiseDataModel noise) {
-        return noiseRepo.save(noise);
-    }
 
     public ArrayList<NoiseDataModel> listarNoises() {
         return (ArrayList<NoiseDataModel>) noiseRepo.findAll();

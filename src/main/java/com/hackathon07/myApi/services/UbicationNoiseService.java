@@ -18,9 +18,13 @@ public class UbicationNoiseService {
     @Autowired
     private UbicationRepository ubicationRepo;
 
-    public List<Map<String, Object>> listarUbiYColors() {
-        List<NoiseDataModel> noises = noiseRepo.findAll();
+    public List<Map<String, Object>> listarUbiYColors(Date fecha, int hora) {
+        // Buscar los datos de ruido que coincidan con la fecha y hora
+        List<NoiseDataModel> noises = noiseRepo.findByDateAndHour(fecha, hora);
+
+        // Obtener todas las ubicaciones
         List<UbicationModel> ubications = ubicationRepo.findAll();
+
         List<Map<String, Object>> combinedData = new ArrayList<>();
 
         // Usar el tamaño más pequeño para evitar errores de índices

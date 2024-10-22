@@ -7,15 +7,14 @@ import com.hackathon07.myApi.services.NoiseDataService;
 import com.hackathon07.myApi.services.UbicationNoiseService;
 import com.hackathon07.myApi.services.UbicationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -30,17 +29,6 @@ public class Controller {
 
     @Autowired
     private UbicationNoiseService ubicationNoiseService;
-
-    @PostMapping("/ubication")
-    private ResponseEntity<UbicationModel> addUbication(@RequestBody UbicationModel ubication) {
-        return ResponseEntity.ok().body(ubicationService.addUbication(ubication));
-    }
-
-
-    @PostMapping("/noise")
-    private ResponseEntity<NoiseDataModel> addNoises(@RequestBody NoiseDataModel noise) {
-        return ResponseEntity.ok().body(noiseDataService.addNoise(noise));
-    }
 
     @GetMapping("/ubications")
     private ArrayList<UbicationDTOModel> listarUbiName(){
@@ -57,10 +45,14 @@ public class Controller {
         return (ArrayList<UbicationModel>) ubicationService.listarAllInfoUbi();
     }
 
-    @GetMapping("/ubicationsAllInfo/dbcolors")
-    public ResponseEntity<List<Map<String, Object>>> getCombinedData() {
-        List<Map<String, Object>> data = ubicationNoiseService.listarUbiYColors();
+    @GetMapping("/ubicationsAllInfo/dbcolors/{fecha}/{hora}")
+    public ResponseEntity<List<Map<String, Object>>> getCombinedData(
+            @PathVariable("fecha") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fecha,
+            @PathVariable("hora") int hora) {
+
+        List<Map<String, Object>> data = ubicationNoiseService.listarUbiYColors(fecha, hora);
         return new ResponseEntity<>(data, HttpStatus.OK);
     }
+
 
 }
