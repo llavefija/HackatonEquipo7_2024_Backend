@@ -9,7 +9,7 @@ import java.util.Date;
 
 // NOMBRE DE LA TABLA
 @Entity
-@Table(name = "noise-data")
+@Table(name = "noise_data")
 public class NoiseDataModel {
 
     // NOMBRES DE COLUMNAS
@@ -58,6 +58,7 @@ public class NoiseDataModel {
     public void setDate(Date date) {
         this.date = date;
     }
+
 
     // DECIBELIOS
     public double getDBs() {
